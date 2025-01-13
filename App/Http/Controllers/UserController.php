@@ -9,10 +9,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = Users::paginate(10); // or however you are fetching the users
-        if ($users->isEmpty()) {
-            return "No users found"; // Debugging line
-        }
+        $users = Users::paginate(10);
         return view('users', compact('users'));
+        // return view('users', $data);
     }
 }
